@@ -14,7 +14,11 @@ namespace TicTacToeGame
 
 
             TicTacToeGame.startplay();
+          
+
+            TicTacToeGame.GetPlayerInput();
             Console.ReadLine();
+
         }
 
     }
