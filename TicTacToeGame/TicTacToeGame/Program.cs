@@ -10,16 +10,14 @@ namespace TicTacToeGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("welcome to the tic tac toe Game");
+            Console.WriteLine("Welcome to Tic Tac Toe Game");
+            char[] CreateBoard;
+            TicTacToeGame obj = new TicTacToeGame();
+            CreateBoard = obj.Board();
+            obj.ChoosePlayer();
+            obj.ShowBoard(CreateBoard);
 
-
-            TicTacToeGame.startplay();
-          
-
-            TicTacToeGame.GetPlayerInput();
-            Console.ReadLine();
 
         }
-
     }
 }

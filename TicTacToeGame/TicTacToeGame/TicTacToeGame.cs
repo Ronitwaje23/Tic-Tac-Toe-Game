@@ -8,46 +8,48 @@ namespace TicTacToeGame
 {
     internal class TicTacToeGame
     {
-        public static char[] TicTacToeBoard = new char[10];
-        public static char player;
-        public static char computer;
-
-        public static void startplay()
+        public char[] Board()
         {
-
-            Console.WriteLine("game starting");
-            Console.WriteLine("==================");
-            Console.WriteLine("||  |    |   ||");
-            Console.WriteLine("||  |    |   ||");
-            Console.WriteLine("||  |    |   ||");
-            Console.WriteLine("==================");
-
-            for (int i = 1; i < TicTacToeBoard.Length; i++)
+            char[] CreateBoard = new char[10];
+            for (int i = 1; i < CreateBoard.Length; i++)
             {
-                TicTacToeBoard[i] = ' ';
+                CreateBoard[i] = ' ';
             }
-            Console.ReadLine();
-
+            Console.WriteLine("Board Initialized");
+            return CreateBoard;
         }
-        public static void GetPlayerInput()
+        public char ChoosePlayer()
         {
-            Console.Write("Choose What Symbol You Want \"X\" or \"O\" : ");
-            player = Convert.ToChar(Console.ReadLine());
-            if (player == 'X' || player == 'x')
+            char[] choice = new char[] { 'X', 'O' };
+            Console.WriteLine("Choose X or O ");
+            char playerChoice = char.Parse(Console.ReadLine());
+            if (playerChoice == choice[0])
             {
-                computer = 'O';
-            }
-            else if (player == 'O' || player == 'o')
-            {
-                computer = 'X';
+                playerChoice = choice[0];
             }
             else
             {
-                Console.WriteLine("Wrong Input Try Again");
-                GetPlayerInput();
+                playerChoice = choice[1];
             }
-            Console.WriteLine("Player Chose : " + player);
-            Console.WriteLine("Computer Chose : " + computer);
+            return playerChoice;
         }
+        public void ShowBoard(char[] createBoard)
+
+        {
+
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", createBoard[1], createBoard[2], createBoard[3]);
+            Console.WriteLine("_____|_____|_____ ");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", createBoard[4], createBoard[5], createBoard[6]);
+            Console.WriteLine("_____|_____|_____ ");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", createBoard[7], createBoard[8], createBoard[9]);
+            Console.WriteLine("     |     |      ");
+        }
+
     }
+
+
+
 }
